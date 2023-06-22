@@ -4,8 +4,58 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JS ES6 Destructuring and Fat Arrow Function</title>
+        <script>
+            // 1. Function Defination
+            
+            // 2. Function Calling/Invoking
+        </script>
     </head>
     <body>
+        <script>
+            // 1. Function Defination
+            // 1.1 This is old way to define function 1995 - 2023
+            function myFunctionA(...n1){ // n1 is a formal argument with rest operator
+                // Function body
+                console.log('I am n1', n1);
+                // Statements
+                // Every function may return something number, string, array, object, function
+                return 10+n1[0]; // I am returning number
+            }
+            
+            // JS ES6 FAT arrow Function 2015 - 2023 New Way
+            const myFunctionB = (...n2) => { // n2 is a formal argument with rest operator
+                console.log(n2[0]);
+                var a = 20; // Local variables
+                // Every Function return something
+                return a+n2[0];
+            }
+
+            let myFunctionC = (n3) => { //n3 is a formal argument
+                console.log(n3);
+                // Every function may return something
+            }
+
+            
+            const myFunctionD = (n4, n5) => {
+                // Every function may return something
+                return n4+n5;
+            }
+
+
+            // 2. Function Calling/Invoking
+            // 3. If function returning something we need to get/catch returning value by defining a variable as below
+            let x = myFunctionA(50); // Here var x is getting/catching the value
+            console.log(x);
+
+            const y = myFunctionB(15);
+            console.log(y);
+            console.log(x+y);
+            myFunctionC(40);
+
+            // const z = myFunctionD(80, 90); // or if we don't want to receive the value, we can define in console as below
+            console.log(myFunctionD(80, 90));
+            // console.log(z);
         
+        </script>
     </body>
 </html>
